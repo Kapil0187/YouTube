@@ -6,14 +6,16 @@ import { useState } from 'react';
 import { YOUTUBE_SEARCH_API } from '../utils/constants';
 import { cacheResults } from '../utils/searchSlice';
 
-
 const Head = () => {
     const dispatch = useDispatch();
     const [searchQuerey,setSearchQuery] = useState("");
     const [suggestions,setSuggestons] = useState([]);
     const [showSuggestions,setShowSuggestion] = useState(true);
-
+   
     const searchCache = useSelector((store)=>store.search);
+  
+  
+
 
     useEffect(()=>{
        const timer = setTimeout(()=>
@@ -52,12 +54,11 @@ const Head = () => {
                 src='https://cdn.iconscout.com/icon/free/png-256/free-hamburger-menu-462145.png?f=webp'>
             </img>
             
-                <img 
+                <img
                     className='h-8 mx-2'
                     alt='youtube-log' 
                     src='https://t4.ftcdn.net/jpg/04/76/41/47/240_F_476414785_Qsbkvlr4AK0lvuKjSDlb7lfOY5oqwimn.jpg'>
                 </img>
-           
         </div>
         <div className= "w-6/12">
             <div>
